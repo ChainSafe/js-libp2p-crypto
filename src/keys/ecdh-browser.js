@@ -9,7 +9,8 @@ const validateCurveType = require('./validate-curve-type')
 const bits = {
   'P-256': 256,
   'P-384': 384,
-  'P-521': 521
+  'P-521': 521,
+  'SECP256K1': 256
 }
 
 exports.generateEphmeralKeyPair = async function (curve) {
@@ -78,7 +79,8 @@ exports.generateEphmeralKeyPair = async function (curve) {
 const curveLengths = {
   'P-256': 32,
   'P-384': 48,
-  'P-521': 66
+  'P-521': 66,
+  'SECP256K1': 32
 }
 
 // Marshal converts a jwk encodec ECDH public key into the
