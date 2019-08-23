@@ -9,3 +9,4 @@ exports.hmac = hmac
 exports.keys = keys
 exports.randomBytes = require('./random-bytes')
 exports.pbkdf2 = require('./pbkdf2')
+exports.hkdf = require('futoin-hkdf')
