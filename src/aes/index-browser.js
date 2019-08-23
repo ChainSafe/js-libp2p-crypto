@@ -7,14 +7,30 @@ exports.create = async function (key, iv) { // eslint-disable-line require-await
   // Throws an error if mode is invalid
   validateCipherMode(key)
 
-  const enc = new asm.AES_CTR.Encrypt({
-    key: key,
-    nonce: iv
-  })
-  const dec = new asm.AES_CTR.Decrypt({
-    key: key,
-    nonce: iv
-  })
+  let enc
+  let dec
+  if (key === 256) {
+    enc = new asm.AES_GCM.Encrypt({
+      key: key,
+      nonce: iv
+    })
+
+    dec = new asm.AES_GCM.Encrypt({
+      key: key,
+      nonce: iv
+    })
+  } 
+  else {
+    enc = new asm.AES_CTR.Encrypt({
+      key: key,
+      nonce: iv
+    })
+
+    dec = new asm.AES_CTR.Decrypt({
+      key: key,
+      nonce: iv
+    })
+  }
 
   const res = {
     async encrypt (data) { // eslint-disable-line require-await
