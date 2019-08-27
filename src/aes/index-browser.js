@@ -18,8 +18,8 @@ exports.create = async function (key, iv) { // eslint-disable-line require-await
     key: key,
     nonce: iv
   })
-  
- const res = {
+
+  const res = {
     async encrypt (data) { // eslint-disable-line require-await
       return Buffer.from(
         enc.process(data).result

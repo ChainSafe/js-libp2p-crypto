@@ -1,4 +1,5 @@
 'use strict'
+/* eslint-disable quote-props */
 
 const crypto = require('crypto')
 const validateCurveType = require('./validate-curve-type')
@@ -7,7 +8,7 @@ const curves = {
   'P-256': 'prime256v1',
   'P-384': 'secp384r1',
   'P-521': 'secp521r1',
-  'SECP256K1':'secp256k1'  
+  'SECP256K1': 'secp256k1'
 }
 
 exports.generateEphmeralKeyPair = async function (curve) { // eslint-disable-line require-await

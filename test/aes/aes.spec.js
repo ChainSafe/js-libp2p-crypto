@@ -1,5 +1,7 @@
 /* eslint max-nested-callbacks: ["error", 8] */
 /* eslint-env mocha */
+/* eslint-disable no-unused-vars */
+
 'use strict'
 
 const chai = require('chai')

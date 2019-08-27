@@ -1,4 +1,5 @@
 'use strict'
+/* eslint-disable quote-props */
 
 const errcode = require('err-code')
 const webcrypto = require('../webcrypto')
