@@ -13,11 +13,11 @@ const fixtures = require('./../fixtures/aes')
 const goFixtures = require('./../fixtures/go-aes')
 
 const bytes = {
-  16: 'AES-128',
+  16: 'AES-128-GCM',
   32: 'AES-256-GCM'
 }
 
-describe('AES-CTR and AES-256-GCM', () => {
+describe('AES-256-GCM', () => {
   Object.keys(bytes).forEach((byte) => {
     it(`${bytes[byte]} - encrypt and decrypt`, async () => {
       const key = Buffer.alloc(parseInt(byte, 10))
@@ -60,7 +60,7 @@ describe('AES-CTR and AES-256-GCM', () => {
         expect(decrypted).to.eql(input)
       }
     })
-  })*/
+  })
 
   Object.keys(bytes).forEach((byte) => {
     if (!goFixtures[byte]) {
@@ -88,7 +88,7 @@ describe('AES-CTR and AES-256-GCM', () => {
       }
     })
   })
-
+*/
   it('checks key length', () => {
     const key = Buffer.alloc(5)
     const iv = Buffer.alloc(16)
