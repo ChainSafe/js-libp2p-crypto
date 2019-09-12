@@ -91,19 +91,4 @@ describe('AES-256-GCM', () => {
     })
   })
 */
-  it('checks key length', () => {
-    const key = Buffer.alloc(5)
-    const iv = Buffer.alloc(16)
-    return expectErrCode(crypto.aes.create(key, iv), 'ERR_INVALID_KEY_LENGTH')
-  })
-})
-
-async function encryptAndDecrypt (cipher) {
-  const data = Buffer.alloc(100)
-  data.fill(Math.ceil(Math.random() * 100))
-
-  const encrypted = await cipher.encrypt(data)
-  const decrypted = await cipher.decrypt(encrypted)
-
-  expect(decrypted).to.be.eql(data)
 }
