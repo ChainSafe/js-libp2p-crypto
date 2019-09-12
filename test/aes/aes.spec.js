@@ -92,3 +92,13 @@ describe('AES-256-GCM', () => {
   })
 */
 })
+
+async function encryptAndDecrypt (cipher) {
+  const data = Buffer.alloc(100)
+  data.fill(Math.ceil(Math.random() * 100))
+
+  const encrypted = await cipher.encrypt(data)
+  const decrypted = await cipher.decrypt(encrypted)
+
+  expect(decrypted).to.be.eql(data)
+}
