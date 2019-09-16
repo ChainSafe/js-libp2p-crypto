@@ -3,8 +3,8 @@
 const errcode = require('err-code')
 
 const CIPHER_MODES = {
-  16: 'aes-128-ctr',
-  32: 'aes-256-ctr'
+  16: 'aes-128-gcm',
+  32: 'aes-256-gcm'
 }
 
 module.exports = function (key) {
